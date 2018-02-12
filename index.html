@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar webapp</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+	
+	
+
+</head>
+<body>
+	<div class="row">
+			<div class="container box-form">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<center>
+						<form>
+							<table>
+								<tr>
+									<td>
+										<label>Start Day: </label>
+									</td>
+									<td>
+										<input type="text" class="form-control" name="startDay" id="inicio" placeholder="MM/DD/YYYY" onKeyup="check();"/>
+									</td>
+								</tr>
+								<tr>
+										<td>
+											<label>Number of days: </label>
+										</td>
+										<td>
+											<input type="number" value="7" class="form-control" name="numberDays" min="1" id="fin" onKeyup="check();"/>
+										</td>
+								</tr>
+								<tr>
+										<td>
+											<label>Country code: </label>
+										</td>
+										<td>
+											<select id="listCountries" class="selectpicker"></select>
+										</td>
+								</tr>
+								<tr>
+										<td colspan="2">
+											<input type="buttom" 
+												   value="Search" 
+												   id="btn-submit" 
+												   class="btn btn-primary btn-submit"
+												   onclick="getData();" disabled/>
+										</td>
+								</tr>
+							</table>
+						</form>
+					</center>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+	</div>
+    <div id="demo"></div>
+
+	<div class="row">
+		<div class="container box" id="box">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 conteiner-box">
+				<table class="table days">
+					<tr class="panel-days">
+						
+						<th><h2>S</h2></th>
+						<th><h2>M</h2></th>
+						<th><h2>T</h2></th>
+						<th><h2>W</h2></th>
+						<th><h2>T</h2></th>
+						<th><h2>F</h2></th>
+						<th><h2>S</h2></th>
+					</tr>
+					<tr class="panel-year">
+							<th colspan="7" id="month"></th>
+					</tr>	
+				</table>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+	<script src="js/functions.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/index.css">
+</body>
+</html>
