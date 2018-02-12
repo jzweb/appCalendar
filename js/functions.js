@@ -11,7 +11,7 @@ function setDaysMonth(year){
         totalDaysMonth.push(m);
         
     }
-    console.log(totalDaysMonth);
+    
 }
 function daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
@@ -48,9 +48,7 @@ function findHolidays(country,day,month,year,counter) {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
             var res = JSON.parse(this.responseText);
-            console.log(res);
             if(res.holidays!=0){
-                    console.log('Holiday in counter '+ counter);
                     document.getElementsByClassName("cel")[counter-1].setAttribute("class", "holi");
             }
       }
@@ -88,7 +86,7 @@ function getData(){
         date2.setDate(date1.getDate() + endDate);
         entryMonth = date1.getMonth();
         var selector = document.getElementById('listCountries');
-        var country = selector[selector.selectedIndex].value;alert(country);
+        var country = selector[selector.selectedIndex].value;
         var numberDaysmonth = daysInMonth(date1.getMonth(),date1.getFullYear());//startDay.getMonth(),startDay.getFullYear()
         // Set the days of each month depends the year
         setDaysMonth(date1.getUTCFullYear());
